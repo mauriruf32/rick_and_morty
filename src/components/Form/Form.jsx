@@ -22,7 +22,9 @@ function Form(props) {
 
   return (
     <div className={styles.form}>
+      <h1>Bienvenido al LogIn</h1>
       <form onSubmit={handleSubmit}>
+        <div className={styles.inputbox}>
           <label>Email</label>
           <input
             type="text"
@@ -37,7 +39,8 @@ function Form(props) {
           ) : (
             <p>{errors.e3}</p>
           )}
-        
+        </div>
+        <div className={styles.inputbox}>
         <label>Password</label>
         <input
           type="text"
@@ -45,7 +48,10 @@ function Form(props) {
           name="password"
           onChange={handleChange}
         />
+        </div>
+        <div className={styles.inputbox}>
         <button type="submit">Submit</button>
+        </div>
       </form>
     </div>
   );

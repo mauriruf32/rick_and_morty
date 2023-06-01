@@ -1,9 +1,7 @@
 
-.cards{
+.cards {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-grow: 1;
-    flex-shrink: 1;
-}
-
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }

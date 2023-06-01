@@ -1,8 +1,16 @@
 export const ROUTES = {
+    LOGIN: '/',
     HOME: '/home/',
     ABOUT: '/about/',
-    // DETAIL: '/detail/:id/',
-}
+} 
 
 
-// '/detail/:id'
+
+// export const ROUTES = {
+//     HOME: '/home/',
+//     ABOUT: '/about/',
+//     // DETAIL: '/detail/:id/',
+// }
+
+
+// // '/detail/:id'
