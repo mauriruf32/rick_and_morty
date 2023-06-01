@@ -1,10 +1,8 @@
-// React and helpers
 import { useEffect, useState } from 'react';
 import './App.css';
 import { ROUTES } from './helpers/RoutesPath';
 import axios from 'axios';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-// Components
 import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/Nav/Nav.jsx';
 import About from './components/About/About.jsx';
