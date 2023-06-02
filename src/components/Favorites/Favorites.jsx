@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Favorites.module.css";
 import { connect, useDispatch } from "react-redux";
 import Card from "../Card/Card";
