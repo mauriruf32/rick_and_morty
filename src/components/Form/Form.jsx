@@ -43,7 +43,7 @@ function Form(props) {
         <div className={styles.inputbox}>
         <label>Password</label>
         <input
-          type="text"
+          type="password"
           value={userData.password}
           name="password"
           onChange={handleChange}
