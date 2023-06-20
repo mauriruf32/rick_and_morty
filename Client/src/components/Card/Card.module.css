@@ -44,7 +44,7 @@
     justify-content: space-evenly;
     font-family: "Courier New", Courier, monospace;
     font-size: medium;
-    color: #ffffff;
+    color: #000000;
   }
   h2 {
     font-size: 12px;
@@ -59,7 +59,7 @@
     justify-content: center;
   }
   
-  .buttonX {
+  .botones {
     font-family: monospace;
     background-color: rgba(42, 21, 77, 0.638);
     color: #3b82f6;
@@ -72,9 +72,9 @@
     transition: 0.3s;
   }
   
-  button:hover {
-    background-color: rgb(71, 133, 79);
+  .botones:hover {
+    background-color: rgb(71, 93, 133);
     box-shadow: 0 0 0 5px #3b83f65f;
-    color: #fff;
+    color: #eb1f1f;
   }
 

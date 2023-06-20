@@ -36,7 +36,7 @@ function Card(props) {
 
   return (
     <div className={styles.card}>
-      <div className={styles.botones} ></div>
+      <div className={styles.botones} >
       {isFav ? (
         <button onClick={handleFavorite}>❤️</button>
       ) : (
@@ -48,7 +48,7 @@ function Card(props) {
         }}
       >
         X
-      </button>
+      </button></div>
       <div className={styles.card}>
         <Link to={`/detail/${id}`}>
           <h1 className={styles.name}>{name}</h1>

@@ -13,17 +13,22 @@
 
 .botones {
   display: block;
-  color: white;
+  color: rgb(252, 9, 9);
   text-align: center;
   padding: 14px 16px;
-  border-radius: 10px;
-  /* float: left; */
-  border: 0px solid #000000;
-  background-color: #5e4dcd;
+  text-decoration: none;
+
+  /* display: block;
+  font-family: sans-serif;
+  color: rgba(18, 88, 240, 0.178);
+  text-align: center;
+  padding: 14px 16px;
+  border-radius: 10px; */
+  background-color: #0d11fa63;
 }
 
 .botones:hover:not(.active) {
-  background-color: #23ce1dc7;
+  background-color: #23ce1d36;
 }
 
 .active {

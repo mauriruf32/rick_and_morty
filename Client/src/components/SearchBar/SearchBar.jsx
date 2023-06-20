@@ -10,11 +10,10 @@ export default function SearchBar(props) {
    return (
         <div className={styles.searchBar}>
         <input type="search"
-        className={styles.input}
         onChange={handleChange}
         value={id}
         />
-        <button className={styles.buttonSubmit} 
+        <button 
         onClick={() => {
           onSearch(id);
         }}

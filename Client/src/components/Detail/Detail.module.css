@@ -3,13 +3,14 @@
     color: white;
     flex-direction: column;
     align-items: center;
-    background: #8a1538;
+    background: #ffffff00;
     background-size: cover;
     width: 100vw;
     height: 94.6vh;
     overflow-x: hidden;
     background-attachment: fixed;
   }
+  
   
   .detailImg {
     padding-top: 3.4rem;
