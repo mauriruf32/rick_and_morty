@@ -36,20 +36,18 @@ function Card(props) {
 
   return (
     <div className={styles.card}>
-      <div className={styles.botones} >
       {isFav ? (
-        <button onClick={handleFavorite}>❤️</button>
+        <button className={styles.card_favorite} onClick={handleFavorite}>❤️</button>
       ) : (
-        <button onClick={handleFavorite}>🤍</button>
+        <button className={styles.card_favorite} onClick={handleFavorite}>🤍</button>
       )}
-      <button
+      <button className={styles.card_close}
         onClick={() => {
           onClose(id);
         }}
       >
         X
-      </button></div>
-      <div className={styles.card}>
+      </button>
         <Link to={`/detail/${id}`}>
           <h1 className={styles.name}>{name}</h1>
         </Link>
@@ -59,8 +57,7 @@ function Card(props) {
           <h2>{gender}</h2>
           <h2>{origin}</h2>
         </div>
-      </div>
-      <img src={image} alt="" />
+      <img className={styles.cardImage} src={image} alt="" />
     </div>
   );
 }
