@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Favorites.module.css";
 import { connect, useDispatch } from "react-redux";
 import Card from "../Card/Card";
-import { filterCards, orderCards } from "../../redux/actions";
+import { filterCards, orderCards } from "../../redux/actions/actions";
 
 const Favorites = (props) => {
   const { myFavorites } = props;
