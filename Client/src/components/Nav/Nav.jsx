@@ -11,13 +11,13 @@ const Nav = (props) => {
     <div className={styles.nav}>
       <div className={styles.botones}>
       <Link to={ROUTES.HOME}>
-        <button>Home</button>
+        <button className={styles.botones}>Home</button>
         </Link>
       <Link to={ROUTES.ABOUT}>
-        <button>About</button>
+        <button className={styles.botones}>About</button>
       </Link>
       <Link to={"/favorites"}>
-       <button>Favorites</button> 
+       <button className={styles.botones}>Favorites</button> 
         </Link>
       <SearchBar onSearch={onSearch} />
       </div>

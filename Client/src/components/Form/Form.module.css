@@ -59,14 +59,14 @@
     transform: translateX(-13px) translateY(-35px);
     font-size: 1em;
   }
-  .form .inputbox [type="button"] {
+  .form .inputbox [type="submit"] {
     width: 50%;
     border-radius: 10px;
     background: rgb(14, 163, 14);
     color: #fff;
     border: #fff;
   }
-  .form .inputbox:hover [type="button"] {
+  .form .inputbox:hover [type="submit"] {
     background: linear-gradient(45deg, rgb(20, 133, 16), rgb(14, 163, 14));
   }
   

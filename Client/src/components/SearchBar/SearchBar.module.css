@@ -1,3 +1,21 @@
 .searchBar {
   float: right;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* height: 50px; */
+  overflow: hidden;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.boton {
+  color: rgb(253, 252, 252);
+  text-align: center;
+  text-decoration: none;
+  background-color: #0d11fa63;
+}
+
+.boton:hover:not(.active) {
+  background-color: #23ce1d36;
 }

@@ -13,7 +13,7 @@ export default function SearchBar(props) {
         onChange={handleChange}
         value={id}
         />
-        <button 
+        <button className={styles.boton}
         onClick={() => {
           onSearch(id);
         }}

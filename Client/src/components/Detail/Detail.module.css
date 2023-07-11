@@ -1,21 +1,30 @@
 .detail {
-    display: flex;
-    color: white;
-    flex-direction: column;
-    align-items: center;
-    background: #ffffff00;
-    background-size: cover;
-    width: 100vw;
-    height: 94.6vh;
-    overflow-x: hidden;
-    background-attachment: fixed;
+  display: flex;
+  width: 50%;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  margin: 15vh auto;
+  color: white;
+  background-color: #042940e7;
+  border: 0.5rem solid var(--lime);
+  padding: 2rem 4rem;
+  position: relative;
+  border-radius: 15px;
   }
   
   
-  .detailImg {
-    padding-top: 3.4rem;
-    padding-bottom: 4rem;
-    width: 20rem;
-    height: 20rem;
+  .detail img {
+    border-radius: 15px;
+    position: absolute;
+    left: 0;
+    margin-left: 2rem;
+    height: 80%;
+    border: 2px solid var(--lime);
   }
   
+  .text {
+    position: absolute;
+    right: 0;
+    margin-right: 2rem;
+  }

@@ -22,7 +22,7 @@ function Form(props) {
 
   return (
     <div className={styles.form}>
-      <h1>Bienvenido al LogIn</h1>
+      <h1>Bienvenido</h1>
       <form onSubmit={handleSubmit}>
         <div className={styles.inputbox}>
           <label>Email</label>

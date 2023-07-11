@@ -1,59 +1,56 @@
-import React, { useState } from "react";
 import styles from "./Favorites.module.css";
-import { connect, useDispatch } from "react-redux";
 import Card from "../Card/Card";
-import { filterCards, orderCards } from "../../redux/actions/actions";
+import { connect } from "react-redux";
+import { filterCards, orderCards, getFav } from "../../redux/actions/actions";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
-const Favorites = (props) => {
-  const { myFavorites } = props;
+function Favorites({ myFavorites }) {
   const dispatch = useDispatch();
-  const [aux, SetAux] = useState(false);
 
-  const handleOrder = (e) => {
-    dispatch(orderCards(e.target.value));
-    SetAux(!aux);
-  };
+  useEffect(()=>{
+    dispatch(getFav())
+  },[])
 
-  const handleFilter = (e) => {
-    dispatch(filterCards(e.target.value));
-  };
+  const handleOrder = function(evento){
+    dispatch(orderCards(evento.target.value))
+  }
 
-  return (
+  const handleFilter = (evento) => {
+    dispatch(filterCards(evento.target.value))
+  }
+
+  return (<div>
     <div>
-      <select onChange={handleOrder}>
-        <option value="A">Ascendente</option>
-        <option value="D">Descendente</option>
+      <select name="order" onChange={handleOrder} >
+        <option value="A">Ascendent</option>
+        <option value="D">Descendent</option>
       </select>
-
-      <select onChange={handleFilter}>
+      <select name="filter" onChange={handleFilter} >
+        <option value="All">All</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
         <option value="Genderless">Genderless</option>
         <option value="unknown">unknown</option>
       </select>
-
-      {myFavorites.map((char) => {
-        return (
-          <Card
-            key={char.id}
-            id={char.id}
-            name={char.name}
-            status={char.status}
-            species={char.species}
-            gender={char.gender}
-            origin={char.origin.name}
-            image={char.image}
-          />
-        );
-      })}
     </div>
-  );
-};
+      <div>{myFavorites?.map(({ id, name, status, species, gender, origin, image }) => (<Card
+            key={id}
+            id={id}
+            name={name}
+            status={status}
+            species={species}
+            gender={gender}
+            origin={origin.name}
+            image={image}
+          />))}</div>
+  </div>)
+}
 
-const mapStateToProps = (state) => {
-  return {
-    myFavorites: state.myFavorites,
-  };
-};
+export function mapStateToProps(state){
+    return {
+        myFavorites: state.myFavorites
+    }
+}
 
-export default connect(mapStateToProps, null)(Favorites);
+export default connect(mapStateToProps)(Favorites)
