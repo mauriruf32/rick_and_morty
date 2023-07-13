@@ -13,7 +13,7 @@ function Card(props) {
     gender,
     origin,
     image,
-    onClose,
+    // onClose,
     addFav,
     removeFav,
     myFavorites,
@@ -40,10 +40,16 @@ function Card(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [myFavorites]);
 
-	const handleClose = () => {
-		removeFav(id)
-		onClose(id)
-	}
+
+  const [isHidden, setIsHidden] = useState(false);
+
+  const onClose = () => {
+    setIsHidden(true);
+  };
+
+  if (isHidden) {
+    return null;
+  }
 
   return (
     <div className={styles.card}>
@@ -55,11 +61,11 @@ function Card(props) {
       )}
 
       {pathname !== "/favorites/" ? (
-        <button className={styles.card_favorite} onClick={handleClose}>
+        <button className={styles.card_close} onClick={onClose}>
           X
         </button>
       ) : (
-        <button className={styles.card_favorite} onClick={handleClose}>X</button>
+        <button className={styles.card_close} onClick={onClose}>X</button>
       ) } 
     
         <Link className={styles.name} to={`/detail/${id}`}>
