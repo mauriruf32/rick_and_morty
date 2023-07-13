@@ -1,52 +1,66 @@
 import { connect } from "react-redux";
 import { addFav, removeFav } from "../../redux/actions/actions";
 import styles from "./Card.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
-function Card({
-  id,
-  name,
-  status,
-  species,
-  gender,
-  origin,
-  image,
-  onClose,
-  addFav,
-  removeFav,
-  myFavorites
-}) {
+function Card(props) {
+  const {
+    id,
+    name,
+    status,
+    species,
+    gender,
+    origin,
+    image,
+    onClose,
+    addFav,
+    removeFav,
+    myFavorites,
+  } = props;
 
   const [isFav, setIsFav] = useState(false);
-
-  useEffect(() => {
-   myFavorites.forEach((charFav) => {
-      if (charFav.id === id) {
-         setIsFav(true);
-      }
-   });
-
-}, [myFavorites]);
-
-  function handleFavorite() {
+  const { pathname } = useLocation();
+  
+  const handleFavorite = () => {
     if (isFav) {
-      setIsFav(false);
       removeFav(id);
     } else {
-      setIsFav(true);
-      addFav({ id, name, status, species, gender, origin, image });
+      addFav(props);
     }
-  }
+    setIsFav(!isFav);
+  };
+
+  useEffect(() => {
+    myFavorites.forEach((fav) => {
+      if (fav.id === props.id) {
+        setIsFav(true);
+      }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [myFavorites]);
+
+	const handleClose = () => {
+		removeFav(id)
+		onClose(id)
+	}
 
   return (
     <div className={styles.card}>
-      <button className={styles.card_close} onClick={ () => onClose(id) }>X</button>     
+   
       {isFav ? (
         <button className={styles.card_close} onClick={handleFavorite}>❤️</button>
       ) : (
         <button className={styles.card_close} onClick={handleFavorite}>🤍</button>
       )}
+
+      {pathname !== "/favorites/" ? (
+        <button className={styles.card_favorite} onClick={handleClose}>
+          X
+        </button>
+      ) : (
+        <button className={styles.card_favorite} onClick={handleClose}>X</button>
+      ) } 
     
         <Link className={styles.name} to={`/detail/${id}`}>
           {name}
@@ -62,16 +76,16 @@ function Card({
   );
 }
 
-export function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return {
-    addFav: function (character) {
+    addFav: (character) => {
       dispatch(addFav(character));
     },
-    removeFav: function (id) {
+    removeFav: (id) => {
       dispatch(removeFav(id));
     },
   };
-}
+};
 
 export function mapStateToProps(state){
    return{

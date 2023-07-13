@@ -1,5 +1,5 @@
-import Card from '../Card/Card.jsx';
-import styles from "./Cards.module.css"
+import Card from '../Card/Card';
+import styles from "./Cards.module.css";
 
 export default function Cards({ characters, onClose}) {
   
@@ -7,8 +7,7 @@ export default function Cards({ characters, onClose}) {
      <div className={styles.cards}>
        {characters.map(
          ({ id, name, status, species, gender, origin, image }) => (
-           <Card
-             key={id}
+           <Card       
              id={id}
              name={name}
              status={status}
